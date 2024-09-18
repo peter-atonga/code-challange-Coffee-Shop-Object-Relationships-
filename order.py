@@ -44,7 +44,18 @@ class Order:
         if type(price)==float and 1.0<=price<=10.0:
             self._price=price
 
+    class Order:
+     def __init__(self, customer, coffee, price):
+        self.customer = customer
+        self.coffee = coffee
+        self.price = price
+        Coffee.coffee_orders.append(self)
 
+    def __str__(self):
+        return f"Order(Customer: {self.customer.name}, Coffee: {self.coffee.name}, Price: {self.price})"
+
+    def __repr__(self):
+        return self.__str__()
 
 # customer1=Customer("cust1")
 # latte=Coffee("latte")
